@@ -149,12 +149,12 @@ setup_cron() {
         echo "$RX crontab not found"
         return 1
     fi
-    crontab=$($cmd -l 2> /dev/null | sed '/#managed_rise/d' 2> /dev/null)
+    crontab=$($cmd -l 2> /dev/null | sed '/#managed_bbn/d' 2> /dev/null)
 
 	crontab=$(cat <<-EOF
 		$crontab
-		@reboot $(command -v "bash") $(pwd)/manager.sh start all > ${LOGS_DIR}/cron.log 2>&1 #managed_rise
-		@daily $(command -v "bash") $(pwd)/manager.sh logRotate > ${LOGS_DIR}/cron.log 2>&1 #managed_rise
+		@reboot $(command -v "bash") $(pwd)/manager.sh start all > ${LOGS_DIR}/cron.log 2>&1 #managed_bbn
+		@daily $(command -v "bash") $(pwd)/manager.sh logRotate > ${LOGS_DIR}/cron.log 2>&1 #managed_bbn
 EOF
 	)
 

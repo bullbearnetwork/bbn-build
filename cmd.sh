@@ -39,7 +39,7 @@ cd docker
 
 echo "Creating build environment…"
 sleep 2
-exec_cmd "docker build . -t rise_build_env"
+exec_cmd "docker build . -t bbn_build_env"
 exit_if_prevfail
 echo "$GC Environment built"
 sleep 2
@@ -47,10 +47,10 @@ sleep 2
 cd ..
 echo "Creating package…"
 sleep 2
-exec_cmd "docker run --rm -e \"COMMITSHA=${COMMITSHA}\" -v $(pwd):/home/rise/tar -v $(pwd)/core:/home/rise/core rise_build_env"
+exec_cmd "docker run --rm -e \"COMMITSHA=${COMMITSHA}\" -v $(pwd):/home/bbn/tar -v $(pwd)/core:/home/bbn/core bbn_build_env"
 exit_if_prevfail
 
-FINAL_NAME="rise_${VERSION}_${NETWORK}_${COMMITSHA}.tar.gz"
+FINAL_NAME="bbn_${VERSION}_${NETWORK}_${COMMITSHA}.tar.gz"
 mv out.tar.gz $FINAL_NAME
 sha1sum "$FINAL_NAME" > "${FINAL_NAME}.sha1"
 

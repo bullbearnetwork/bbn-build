@@ -1,4 +1,4 @@
-# RISE Build Tools
+# BBN Build Tools
 
 This project contains build and utility scripts to package the core code.
 
@@ -23,6 +23,6 @@ When docker image is built, tar.gz can be created by running the newly created i
 
 ### Other scripts
 
-The scripts folder contains the install.sh script which will let user install RISE easily.
+The scripts folder contains the install.sh script which will let user install BBN easily.
 
   

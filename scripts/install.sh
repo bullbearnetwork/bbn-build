@@ -20,8 +20,8 @@
 # Make sure that if anything fails the command script stops executing
 set -e
 
-DOWNLOAD_BASEURL=${DOWNLOAD_BASEURL:-"https://downloads.rise.vision/core/"}
-INSTALL_DIR="./rise"
+DOWNLOAD_BASEURL=${DOWNLOAD_BASEURL:-"https://downloads.bullbear.network/core/"}
+INSTALL_DIR="./bbn"
 LOG_FILE=install.out
 
 GC="$(tput setaf 2)√$(tput sgr0)"
